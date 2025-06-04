@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('address1').value = '23476 Chervil Ln, Ashburn, VA, 20148';
+  document.getElementById('address2').value = '22841 QUEENSBRIDGE DR, Ashburn, VA, 20148';
+});
+
 document.getElementById('distanceForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const origin = document.getElementById('address1').value;
@@ -11,7 +16,7 @@ document.getElementById('distanceForm').addEventListener('submit', function(e) {
         const distance = data.rows[0].elements[0].distance.text;
         const duration = data.rows[0].elements[0].duration.text;
         document.getElementById('result').innerHTML = 
-          `Driving distance: ${distance}<br>Estimated time: ${duration}`;
+          `The distance between Ramana Gari's home and Gosri's home is <strong>${distance}</strong> and takes approximately <strong>${duration}</strong>.`;
       } else {
         document.getElementById('result').innerText = 'Unable to find distance.';
       }
